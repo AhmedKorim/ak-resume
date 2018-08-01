@@ -1,2 +1,2 @@
-# udacity
+# ak-resume
 udaCity project
