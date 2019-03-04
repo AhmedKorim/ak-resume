@@ -1,0 +1,35 @@
+#portfolio{
+
+  .galleryWraper{
+   height: 500px;
+    transform-style: preserve-3d;
+  perspective: 1000px;
+  .gallery-item{
+    position: absolute;
+    top: 0;
+    left:0;
+    background-color: red;
+    width: 300px;
+    height: 300px;
+    display: inline-block;;
+    &.first{
+      //transform: translate3d(50%,0,0);
+      z-index: 9;
+    }&.second{
+
+    }&.third{
+
+    }&.fourth{
+
+    }&.fifth{
+
+    }&.sixth{
+
+    }&.seventh{
+
+    }&.eighth{
+
+    }
+  }
+}
+}

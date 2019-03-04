@@ -1,2 +1,0 @@
-# ak-resume
-udaCity project

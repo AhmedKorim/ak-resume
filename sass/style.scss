@@ -1,0 +1,510 @@
+/* global*/
+/*colors*/
+$mainColor: #2C3E50;
+$fontColor: #ECF0F1;
+$secColor: #3498DB;
+$secColordark: #2980B9;
+$leadColordark: #E74C3C;
+/*colors*/
+/*fonts*/
+%mainFont {
+  font-family: 'Open Sans', sans-serif;
+}
+
+%lead {
+  font-family: montserrat, Helvetica, Arial, sans-serif;
+}
+
+/*fonts*/
+
+/*compunants*/
+%navlink {
+  opacity: 1;
+  color: #ECF0F1;
+  bottom: 0%;
+
+}
+
+%ak-btn {
+    background-color: darken($mainColor,5);
+    border-color:lighten($mainColor, 5) ;
+  box-shadow: none;
+  &:hover {
+      background-color: lighten($mainColor,10);
+    }
+}
+
+.py-5 {
+  padding: 5rem 0 !important;
+  background-color: $mainColor;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, .9);
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  @extend %mainFont;
+}
+
+/*compunants*/
+
+/*global*/
+
+/*show case*/
+body {
+  @extend %mainFont;
+
+  color: hsl(120, 10%, 90%);
+  position: relative;
+  padding-bottom: 300px;
+
+}
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+/*navbar*/
+.navbar.AKstick {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  background: rgba(255, 255, 255, .02);
+}
+
+.navbar.fixed-top {
+  background-color: transparentize($mainColor, .2);
+}
+
+.navbar.navbar-dark {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .5), 0 1px 5px rgba(0, 0, 0, .5) inset;
+  transition: all 1s ease-in-out;
+  .navbar-brand {
+    font-size: 1.8rem;
+    color: $leadColordark;
+    small {
+      color: $secColor;
+    }
+  }
+  .navbar-nav {
+    .nav-item {
+      padding: 0 1px;
+      .nav-link {
+        display: block;
+        position: relative;
+        &::after {
+          content: '';
+          width: 100%;
+          height: 2px;
+          transition: all .5s ease-in-out;
+          bottom: -20%;
+          left: 0;
+          opacity: 0;
+          position: absolute;
+          background-color: $secColor;
+
+        }
+        &:focus::after, &:hover::after {
+          @extend %navlink;
+
+        }
+
+      }
+      &.active a::after {
+        @extend %navlink;
+
+      }
+    }
+
+  }
+}
+
+/*navbar*/
+
+#home {
+
+  background: url("../images/home.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  .jumbotron {
+    background-color: transparentize(#2C3E50, .4);
+    color: hsl(0, 0%, 90%);
+    margin: 0;
+
+    h2 {
+      @extend %lead;
+    }
+    .lead {
+      font-size: 1.3rem;
+
+    }
+    .btn-primary {
+      margin-top: 15px;
+      color: hsl(0, 0%, 90%);
+      font-size: 1.3rem;
+      @extend %ak-btn;
+    }
+  }
+}
+
+/*my services*/
+#services {
+  .card {
+    background: transparentize($mainColor, 1);
+    color: #ECF0F1;;
+
+  }
+}
+
+/*my services*/
+/*show case*/
+/*my experiences*/
+
+/*my experiences*/
+/*skills*/
+#skills {
+  h2.h1 {
+    margin-bottom: 30px !important;
+  }
+  p {
+    margin: 0 0 30px;
+  }
+  nav {
+    .btn-outline-primary {
+      border-color: $secColordark;
+      opacity: .8;
+      &.active, &:hover {
+        background-color: darken($secColordark, 20);
+
+      }
+    }
+  }
+}
+
+/*skills*/
+/*clients*/
+#clients {
+  padding: 0;
+  h2.h1 {
+    margin-bottom: 30px !important;
+  }
+  p {
+    margin: 0 0 30px;
+  }
+  .brands {
+    padding: 20px 0;
+  }
+}
+
+/*clients*/
+
+/*clients*/
+/*portfolio*/
+#portfolio {
+  .port-item {
+    &:hover{
+      .gallery-caption {
+      width: 100%;
+      height: 100%;
+       .overflow{
+        opacity: 1;
+      }
+    }
+    }
+    .gallery-caption {
+      background-color: transparentize($mainColor, .2);
+      width: 0%;
+      height: 0%;
+      position: absolute;
+      transition: all .6s ease-in-out;
+      overflow: hidden;
+      a {
+        color: $fontColor;
+        background-color: $mainColor;
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: 20px 20px;
+        transition: all .7s ease-in-out;
+        &:hover {
+          background-color: $fontColor;
+          color: $mainColor;
+        }
+
+      }
+  .overflow{
+    overflow: hidden;
+    opacity: 0;
+    transition: all .4s ease-in-out;
+  }
+
+    }
+  }
+}
+
+/*portfolio*/
+
+/*testimonails*/
+#testimonials {
+  height: 542px;
+  cite {
+    font-size: 1.5em;
+  }
+  .carousel {
+    color: $fontColor;
+    .carousel-indicators {
+      position: relative;
+      top: 20px;
+      li {
+        transition: all .33s ease-in-out;
+        cursor: pointer;
+        margin-left: 5px;
+        border-radius: 50%;
+        opacity: .5;
+        color: transparent;
+        background-color: transparent;
+        height: 60px;
+        width: 60px;
+        overflow: hidden;
+        background-position: center center;
+        background-size: cover;
+        &.active {
+          opacity: 1;
+        }
+        &:first-of-type {
+          background-image: url("../images/testimonials/01.jpg");
+        }
+        &:nth-of-type(2) {
+          background-image: url("../images/testimonials/02.jpg");
+        }
+        &:nth-of-type(3) {
+          background-image: url("../images/testimonials/03.jpg");
+        }
+        &:nth-of-type(4) {
+          background-image: url("../images/testimonials/04.jpg");
+        }
+        &:nth-of-type(5) {
+          background-image: url("../images/testimonials/05.jpg");
+        }
+      }
+    }
+    .carousel-inner {
+      p {
+        @extend %lead;
+        line-height: 1.7;
+        font-size: 1.4rem;
+        font-style: italic;
+        &::before {
+          content: "\f10d";
+          font-family: "FontAwesome";
+          font-size: 3em;
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/*testimonails*/
+
+/*forms*/
+%form {
+  .btn {
+    border: none;
+    background-color: darken($mainColor, 5);
+    &:hover {
+      background-color: lighten($mainColor, 10);
+    }
+  }
+  div[class^="col"] {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .form-control {
+    color: $fontColor;
+    border: none;
+    position: relative;
+    box-shadow: none;
+    outline: none;
+    width: 100%;
+    background-color: darken($mainColor,5);
+    border-radius: .25rem .25rem 0 0;
+
+    &::placeholder {
+      color: $fontColor;
+      opacity: .5;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border: none;
+    }
+  }
+  .bor {
+    transition: all .5s ease-in-out;
+    display: block;
+    opacity: 0;
+    color: $secColor;
+    width: 100%;
+    height: 4px;
+    bottom: -15px;
+    left: 0;
+    background-color: $secColor;
+    position: absolute;
+    z-index: 3;
+  }
+  .bord {
+    @extend .bor;
+    bottom: 0;
+    opacity: 1;
+    z-index: -1;
+    background-color: transparentize($mainColor, .6)
+  }
+  textarea {
+    resize: none;
+  }
+}
+
+/*forms*/
+#contact {
+  form {
+    @extend %form;
+  }
+}
+
+
+/*footer*/
+#footer {
+  position: relative;
+  background-color: darken($mainColor, 10);
+  bottom: 0%;
+  width: 100%;
+  z-index: 1;
+  height: 300px;
+
+  p {
+    margin-bottom: 30px;
+  }
+  li {
+    a {
+      color: $fontColor;
+      display: block;
+      font-size: 20px;
+      width: 50px;
+      line-height: 50px;
+      height: 50px;
+      background: #25282a;
+      -webkit-transition: all 0.5s ease-in-out 0s;
+      -moz-transition: all 0.5s ease-in-out 0s;
+      -o-transition: all 0.5s ease-in-out 0s;
+      transition: all 0.5s ease-in-out 0s;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+    }
+
+    padding: 5px;
+    background-color: $mainColor;
+    border-radius: 50%;
+
+    &:first-of-type:hover a {
+      background-color: #3b5999;
+    }
+    &:nth-of-type(2):hover a {
+      background-color: #55acee;
+    }
+    &:nth-of-type(3):hover a {
+      background-color: #bd081c;
+    }
+    &:nth-of-type(4):hover a {
+      background-color: #55acee;
+    }
+    &:nth-of-type(5):hover a {
+      background-color: #55acee;
+    }
+  }
+}
+
+/*modal*/
+#workWithMeModal {
+  span{
+    color:$fontColor;
+  }
+
+  .modal-body , .modal-header,.modal-footer,.modal-content {
+    color: $fontColor;
+    background-color: $mainColor;
+    border-color:lighten($mainColor, 5) ;
+  }
+  form{
+    textarea{
+      resize: none;
+    }
+    input[type ="file"]{
+      z-index: 3;
+      position:absolute;
+      opacity: 0;
+      width:90%;
+      &:hover +div{
+        background-color: lighten($mainColor,10);
+      }
+    &+ div{
+    position:relative;
+    height: 100%;
+      width: 100%;
+      background-color: darken($mainColor,5);
+      line-height: 35px;
+    z-index: 2;
+      border-radius: .25rem;
+  }
+    }
+    .form-control, .btn{
+      //overflow: hidden;
+      color: $fontColor;
+      background-color: darken($mainColor,5);
+      border:none;
+      outline: none;
+      box-shadow: none;
+      &::placeholder{
+        color: $fontColor;
+        opacity: .5;
+      }
+  }
+    }
+
+  .btn , .btn-secondary{
+    @extend %ak-btn;
+
+  }
+}
+.scrollToTop{
+  @extend %ak-btn;
+  position: fixed;
+  z-index: 99;
+  bottom: 30px;
+  right: -50px;
+  height: 50px;
+  width: 50px;
+  color: $fontColor;
+  border-radius: .75rem;
+  font-size: 1.5em;
+  transition: all .7s ease-in-out;
+  transform: rotateZ(-10deg);
+  border: none;
+  outline: none;
+  &:hover,&:focus{
+    border: none;
+
+    outline: none;
+  box-shadow: -1px 8px 18px 1px transparentize($fontColor ,.9);
+    background-color: $fontColor;
+    color: $mainColor;
+    transform: rotateZ(0deg);
+
+  }
+
+}
+/*modal*/
+
+/*footer*/

@@ -1,0 +1,19 @@
+#portfolio .galleryWraper {
+  height: 500px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+#portfolio .galleryWraper .gallery-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+}
+#portfolio .galleryWraper .gallery-item.first {
+  z-index: 9;
+}
+
+/*# sourceMappingURL=gallery.css.map */
